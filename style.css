@@ -1,0 +1,445 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #10090e;
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+    overflow-x: hidden;
+}
+
+.background-glow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse at 50% 20%, #651b392b, transparent 55%),
+        radial-gradient(ellipse at 10% 80%, #a21b4420, transparent 40%);
+    z-index: -1;
+}
+
+header {
+    height: 85px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 45px;
+    color: #f2b5c9;
+}
+
+.logo span {
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #ff527f;
+}
+
+.music-btn {
+    background: #ffffff0b;
+    border: 1px solid #e99ab44a;
+    color: #f5c3d3;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: .3s;
+}
+
+.music-btn:hover {
+    background: #a52b54;
+    color: white;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.small-heart {
+    font-size: 60px;
+    color: #ff638c;
+    animation: heartbeat 1.5s infinite;
+}
+
+.subtitle, .section-label {
+    color: #d78ca8;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin: 15px 0;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 7vw, 65px);
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.hero h1 span {
+    color: #f18eae;
+    text-shadow: 0 0 35px #f18eae70;
+}
+
+.hero-text {
+    color: #c6aeb9;
+    font-size: 17px;
+    margin: 10px 0 25px;
+}
+
+.love-line {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 10px;
+    color: #d99bb1;
+    letter-spacing: 3px;
+}
+
+.love-line span {
+    height: 1px;
+    width: 35px;
+    background: #b64b70;
+}
+
+.main-btn {
+    margin-top: 40px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #c63e6b, #822344);
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 8px 35px #d13e6b44;
+    transition: .3s;
+}
+
+.main-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px #d13e6b77;
+}
+
+.main-btn span {
+    margin-right: 10px;
+}
+
+.scroll-text {
+    margin-top: 75px;
+    font-size: 9px;
+    color: #8e7180;
+    letter-spacing: 4px;
+}
+
+.down-arrow {
+    color: #e88eae;
+    font-size: 24px;
+    animation: down 1.5s infinite;
+}
+
+.counter-section, .letter-section, .final-section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.counter-section h2, .letter-section h2 {
+    font-size: clamp(25px, 5vw, 38px);
+}
+
+.date {
+    color: #d78ca8;
+    margin: 15px 0 35px;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.counter-box {
+    width: 110px;
+    height: 115px;
+    background: #ffffff09;
+    border: 1px solid #e78eac35;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    backdrop-filter: blur(10px);
+}
+
+.counter-box strong {
+    font-size: 35px;
+    color: #f19bb7;
+}
+
+.counter-box span {
+    font-size: 12px;
+    color: #c7aab8;
+}
+
+.counter-note {
+    margin-top: 25px;
+    color: #dba1b6;
+    font-size: 14px;
+}
+
+.letter-hint, .open-hint {
+    color: #c7a5b4;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.envelope {
+    position: relative;
+    width: 260px;
+    height: 175px;
+    margin: 75px auto 25px;
+    cursor: pointer;
+    perspective: 800px;
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #a52d56;
+    border-radius: 5px;
+}
+
+.letter {
+    position: absolute;
+    z-index: 2;
+    background: #fff1e9;
+    color: #772b48;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    padding: 15px;
+    text-align: center;
+    transition: transform .9s ease;
+    border-radius: 4px;
+}
+
+.letter h3 {
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.letter p {
+    font-size: 12px;
+}
+
+.letter-heart {
+    color: #bd365e;
+    font-size: 24px;
+}
+
+.envelope-flap {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    background: #d34b76;
+    clip-path: polygon(0 0, 100% 0, 50% 60%);
+    transform-origin: top;
+    transition: transform .7s ease;
+}
+
+.envelope-front {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background: #b73560;
+    clip-path: polygon(0 100%, 0 0, 50% 58%, 100% 0, 100% 100%);
+}
+
+.envelope-seal {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    top: 58%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background: #751c3e;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope.open .letter {
+    transform: translateY(-125px);
+    z-index: 6;
+}
+
+.envelope.open .envelope-seal {
+    opacity: 0;
+}
+
+.message-section {
+    display: none;
+    padding: 50px 20px 100px;
+}
+
+.message-section.show {
+    display: block;
+    animation: appear 1s ease;
+}
+
+.message-card {
+    max-width: 650px;
+    margin: auto;
+    padding: 45px 30px;
+    background: linear-gradient(145deg, #301321, #1c1019);
+    border: 1px solid #d77a9a3b;
+    border-radius: 25px;
+    box-shadow: 0 20px 70px #0005;
+}
+
+.big-heart, .final-heart {
+    color: #f15a87;
+    font-size: 55px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.message-card h2 {
+    color: #f5b2c9;
+    font-size: 30px;
+    margin: 15px 0 25px;
+}
+
+.love-message {
+    color: #e5cad5;
+    font-size: 15px;
+    line-height: 2.3;
+}
+
+.signature {
+    color: #f18cad;
+    font-size: 22px;
+    margin-top: 35px;
+    font-weight: bold;
+}
+
+.signature span {
+    display: block;
+    font-family: 'Great Vibes', cursive;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.final-section h2 {
+    font-size: clamp(24px, 5vw, 38px);
+    color: #f1abc1;
+    margin: 20px 0;
+}
+
+.final-section p {
+    color: #c9aab8;
+}
+
+.forever {
+    color: #d68da9;
+    letter-spacing: 5px;
+    font-size: 11px;
+    margin-top: 30px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #997c8b;
+    border-top: 1px solid #ffffff0b;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ed6b96;
+    pointer-events: none;
+    animation: floatHeart linear forwards;
+    z-index: 10;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+@keyframes floatHeart {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width: 600px) {
+    header {
+        padding: 0 5%;
+    }
+
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .counter-box {
+        width: 75px;
+        height: 90px;
+    }
+
+    .counter-box strong {
+        font-size: 27px;
+    }
+
+    .message-card {
+        padding: 35px 20px;
+    }
+
+    .love-message {
+        font-size: 13px;
+    }
+}
